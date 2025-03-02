@@ -1,0 +1,34 @@
+Form {
+    width: 80%;
+    margin: auto;
+    margin-bottom: 30px;
+    display: flex;
+    gap: 12px;
+    align-items: flex-end;
+    justify-content: center;
+  }
+
+
+  @media screen and (max-width: 550px) {
+    Form {
+      width: 100%;
+      margin: auto;
+      display: flex;
+      gap: 12px;
+      align-items: flex-end;
+      justify-content: center;
+    }
+  }
+
+
+  @media screen and (max-width: 750px) {
+    Form {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    Form input,Form div {
+      width: 100%;
+      display: block;
+    }
+  }

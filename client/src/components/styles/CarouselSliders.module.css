@@ -1,0 +1,87 @@
+.CarouselSliders {
+    margin: 10px;
+}
+
+.Slider {
+    display: flex;
+    overscroll-behavior-inline: contain;
+    scroll-snap-type: inline mandatory;
+    overflow-x: scroll;
+    scroll-behavior: smooth;
+    
+}
+
+.Slider::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+.Slider {
+    scrollbar-width: 12px;
+    padding-bottom: 6px;
+}
+.Slider::-webkit-scrollbar-thumb {
+    border-radius: 20px;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.Slider::-webkit-scrollbar-track {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.SlideItem {
+    height: 100%;
+    width: 100%;
+   scroll-snap-align: center;
+}
+
+.SlideItem:not(:first-child) {
+    margin-left: 15px;
+}
+
+.SlideItem:nth-child(1) { background-color: rebeccapurple;}
+.SlideItem:nth-child(2) { background-color: dodgerblue;}
+.SlideItem:nth-child(3) { background-color: greenyellow;}
+
+.Iframe {
+    width: 450px;
+    height: 300px;
+}
+
+
+@media (max-width: 868px) {
+    .Iframe {
+        width: 360px;
+        height: 230px;
+    }
+}
+
+@media (max-width: 690px) {
+    .Iframe {
+        width: 280px;
+        height: 150px;
+    }
+}
+
+
+@media screen and (min-width: 768px) {
+    .Circles {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 8px 0;
+    }
+    .Circles .Link {
+        height: 16px;
+        width: 16px;
+        margin: 0 3px;
+        display: inline-block;
+        border-radius: 50%;
+        background-color: #c1c1c1;
+        transition: all 0.5s ease-in-out;
+    }
+
+    .Link.ActiveLink {
+        background-color: #6a0dad;
+      }
+}

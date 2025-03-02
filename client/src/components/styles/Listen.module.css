@@ -1,0 +1,93 @@
+.ListenButton {
+    display: flex;
+    font-size: 10px;
+    cursor: default;
+    border-radius: 50%;
+    position: absolute;
+    color: aliceblue;
+    align-items: center;
+    justify-content: center;
+    transition-duration: 300ms;
+    background-color: dodgerblue;
+}
+
+.ListenButton:hover {
+    background-color: dodgerblue;;
+}
+
+.ListenButton.Enabled:hover {
+    scale: 1.1;
+    cursor: pointer;
+    background-color: #0366ee;;
+}
+
+.RippleContainer {
+    height: 100%;
+    width: 100%;
+    align-self: center;
+    text-align: center;
+  }
+  
+.RippleBox {
+    width: 75px;
+    height: 75px;
+    position: relative;
+    margin: auto;
+    margin-top: 90px;
+    margin-bottom: 80px;
+}
+
+.RippleButton,
+.ListenButton {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    position: relative;
+    z-index: 2;
+}
+
+/* ripple animation */
+@keyframes rippleAnimation {
+    0% {
+        opacity: 0.55;
+        transform: scale(0);
+    } 
+    
+    100% {
+        opacity: 0;
+        transform: scale(3.3);
+    }
+}
+  
+.RippleBox::before,
+.RippleButton::before,
+.RippleButton::after {
+    content: '';
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-color: dodgerblue;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.RippleBoxPlay::before {
+    z-index: 0;
+    animation: 3s 1s ease-out rippleAnimation infinite;
+}
+
+.RippleButtonPlay::before {
+    animation: 3s 2s ease-out rippleAnimation infinite;
+}
+
+.RippleButtonPlay::after {
+    animation: 3s 3s ease-out rippleAnimation infinite;
+}
+  
+.RippleBoxStop::before,
+.RippleButtonStop::before,
+.RippleButtonStop::after {
+    animation: none;
+}
