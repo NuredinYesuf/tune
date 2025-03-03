@@ -1,44 +1,41 @@
+// Package db provides functionality to interact with a MongoDB database for song recognition.
+// This package includes methods to store and retrieve song fingerprints, register songs, and manage song collections.
+// The MongoDB database is connected to the front-end part of the application, enabling users to interact with the song recognition system.
+
 package db
 
-import (
-	"context"
-	"errors"
-	"fmt"
-	"song-recognition/models"
-	"song-recognition/utils"
-	"strings"
-
-	"go.mongodb.org/mongo-driver/bson"
-	"go.mongodb.org/mongo-driver/bson/primitive"
-	"go.mongodb.org/mongo-driver/mongo"
-	"go.mongodb.org/mongo-driver/mongo/options"
-)
-
+// MongoClient is a wrapper around the MongoDB client to provide methods for interacting with the song recognition database.
 type MongoClient struct {
 	client *mongo.Client
 }
 
-func NewMongoClient(uri string) (*MongoClient, error) {
-	clientOptions := options.Client().ApplyURI(uri)
-	client, err := mongo.Connect(context.Background(), clientOptions)
-	if err != nil {
-		return nil, fmt.Errorf("error connecting to MongoDB: %s", err)
-	}
-	return &MongoClient{client: client}, nil
-}
+// NewMongoClient creates a new MongoClient instance and connects to the MongoDB database using the provided URI.
+func NewMongoClient(uri string) (*MongoClient, error) {}
 
-func (db *MongoClient) Close() error {
-	if db.client != nil {
-		return db.client.Disconnect(context.Background())
-	}
-	return nil
-}
+// Close disconnects the MongoClient from the MongoDB database.
+func (db *MongoClient) Close() error {}
 
-func (db *MongoClient) StoreFingerprints(fingerprints map[uint32]models.Couple) error {
-	collection := db.client.Database("song-recognition").Collection("fingerprints")
+// StoreFingerprints stores song fingerprints in the MongoDB database.
+func (db *MongoClient) StoreFingerprints(fingerprints map[uint32]models.Couple) error {}
 
-	for address, couple := range fingerprints {
-		filter := bson.M{"_id": address}
+// GetCouples retrieves song couples from the MongoDB database based on the provided addresses.
+func (db *MongoClient) GetCouples(addresses []uint32) (map[uint32][]models.Couple, error) {}
+
+// TotalSongs returns the total number of songs stored in the MongoDB database.
+func (db *MongoClient) TotalSongs() (int, error) {}
+
+// RegisterSong registers a new song in the MongoDB database with the provided title, artist, and YouTube ID.
+func (db *MongoClient) RegisterSong(songTitle, songArtist, ytID string) (uint32, error) {}
+
+// GetSong retrieves a song from the MongoDB database based on the provided filter key and value.
+func (db *MongoClient) GetSong(filterKey string, value interface{}) (s Song, songExists bool, e error) {}
+
+// GetSongByID retrieves a song from the MongoDB database based on the song ID.
+func (db *MongoClient) GetSongByID(songID uint32) (Song, bool, error) {}
+
+// GetSongByYTID retrieves a song from the MongoDB database based on the YouTube ID.
+func (db *MongoClient) GetSongByYTID(ytID string) (Song, bool, error) {}
+
 		update := bson.M{
 			"$push": bson.M{
 				"couples": bson.M{
