@@ -9,7 +9,6 @@ If you're interested in SeekTune, you might also want to check out these similar
 
 These projects offer various approaches and implementations for audio recognition and can serve as valuable resources for understanding and developing similar systems.
 
-
 <h1 align="center">SeekTune :musical_note:</h1>
 
 <p align="center">
@@ -151,12 +150,5 @@ This application uses SQLite as the default database, but you can switch to Mong
 - [How does Shazam work - Toptal](https://www.toptal.com/algorithms/shazam-it-music-processing-fingerprinting-and-recognition)
 - [Creating Shazam in Java](https://www.royvanrijn.com/blog/2010/06/creating-shazam-in-java/)
 
-
-## Author :black_nib:
-- Chigozirim Igweamaka
-  - Connect with me on [LinkedIn](https://www.linkedin.com/in/ichigozirim/).
-  - Check out my other [GitHub](https://github.com/cgzirim) projects.
-  - Follow me on [Twitter](https://twitter.com/cgzirim).
- 
 ## License :lock:
 This project is licensed under the MIT License - see the [LICENSE](./LICENSE) file for details.
