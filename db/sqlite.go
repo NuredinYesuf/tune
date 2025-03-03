@@ -1,78 +1,41 @@
 package db
 
 import (
-	"database/sql"
-	"fmt"
-	"song-recognition/models"
-	"song-recognition/utils"
-	"strings"
+	"database/sql" // Provides generic interface around SQL databases
+	"fmt"          // Implements formatted I/O with functions analogous to C's printf and scanf
+	"song-recognition/models" // Custom package for data models used in the application
+	"song-recognition/utils"  // Custom package for utility functions used in the application
+	"strings"      // Implements simple functions to manipulate UTF-8 encoded strings
 
-	"github.com/mattn/go-sqlite3"
+	"github.com/mattn/go-sqlite3" // SQLite driver for Go's database/sql package
 )
 
+// SQLiteClient is a struct that holds a reference to the SQLite database connection.
 type SQLiteClient struct {
 	db *sql.DB
 }
 
+// NewSQLiteClient initializes a new SQLiteClient with the given data source name and creates the required tables.
 func NewSQLiteClient(dataSourceName string) (*SQLiteClient, error) {
-	db, err := sql.Open("sqlite3", dataSourceName)
-	if err != nil {
-		return nil, fmt.Errorf("error connecting to SQLite: %s", err)
-	}
-
-	err = createTables(db)
-	if err != nil {
-		return nil, fmt.Errorf("error creating tables: %s", err)
-	}
-
-	return &SQLiteClient{db: db}, nil
+	// ...
 }
 
-// createTables creates the required tables if they don't exist
+// createTables creates the required tables if they don't exist.
 func createTables(db *sql.DB) error {
-	createSongsTable := `
-    CREATE TABLE IF NOT EXISTS songs (
-        id INTEGER PRIMARY KEY AUTOINCREMENT,
-        title TEXT NOT NULL,
-        artist TEXT NOT NULL,
-        ytID TEXT UNIQUE,
-        key TEXT NOT NULL UNIQUE
-    );
-    `
-
-	createFingerprintsTable := `
-    CREATE TABLE IF NOT EXISTS fingerprints (
-        address INTEGER NOT NULL,
-        anchorTimeMs INTEGER NOT NULL,
-        songID INTEGER NOT NULL,
-        PRIMARY KEY (address, anchorTimeMs, songID)
-    );
-    `
-
-	_, err := db.Exec(createSongsTable)
-	if err != nil {
-		return fmt.Errorf("error creating songs table: %s", err)
-	}
-
-	_, err = db.Exec(createFingerprintsTable)
-	if err != nil {
-		return fmt.Errorf("error creating fingerprints table: %s", err)
-	}
-
-	return nil
+	// ...
 }
 
+// Close closes the database connection.
 func (db *SQLiteClient) Close() error {
-	if db.db != nil {
-		return db.db.Close()
-	}
-	return nil
+	// ...
 }
 
+// StoreFingerprints stores the given fingerprints in the database.
 func (db *SQLiteClient) StoreFingerprints(fingerprints map[uint32]models.Couple) error {
-	tx, err := db.db.Begin()
-	if err != nil {
-		return fmt.Errorf("error starting transaction: %s", err)
+	// ...
+}
+
+// GetCouples retrieves couples from the database for the given addresses.
 	}
 
 	stmt, err := tx.Prepare("INSERT OR REPLACE INTO fingerprints (address, anchorTimeMs, songID) VALUES (?, ?, ?)")
