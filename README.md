@@ -4,7 +4,7 @@
 
 These projects offer various approaches and implementations for audio recognition and can serve as valuable resources for understanding and developing similar systems.
 
-<h1 align="center">SeekTune :musical_note:</h1>
+<h1 align="center">Tune :musical_note:</h1>
 
 <p align="center">
   <a href="https://drive.google.com/file/d/1I2esH2U4DtXHsNgYbUi4OL-ukV5i_1PI/view" target="_blank">
@@ -14,7 +14,7 @@ These projects offer various approaches and implementations for audio recognitio
 </a>
 </p>
 
-<p align="center"><a href="https://drive.google.com/file/d/1I2esH2U4DtXHsNgYbUi4OL-ukV5i_1PI/view" target="_blank">Demo in Video</a></p>
+
 
 ## Description 🎼
 SeekTune is an implementation of Shazam's song recognition algorithm based on insights from these [resources](#resources--card_file_box). It integrates Spotify and YouTube APIs to find and download songs.
@@ -145,5 +145,4 @@ This application uses SQLite as the default database, but you can switch to Mong
 - [How does Shazam work - Toptal](https://www.toptal.com/algorithms/shazam-it-music-processing-fingerprinting-and-recognition)
 - [Creating Shazam in Java](https://www.royvanrijn.com/blog/2010/06/creating-shazam-in-java/)
 
-## License :lock:
-This project is licensed under the MIT License - see the [LICENSE](./LICENSE) file for details.
+
