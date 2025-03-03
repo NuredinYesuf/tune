@@ -1,11 +1,6 @@
 ## Similar Projects :musical_score:
 
-If you're interested in SeekTune, you might also want to check out these similar projects:
 
-- **dejavu**: An open-source audio fingerprinting and recognition system implemented in Python. It can recognize songs by their audio fingerprint and is similar to Shazam. [GitHub Repository](https://github.com/worldveil/dejavu)
-- **audiorecognition**: A Python library for audio recognition using fingerprinting techniques. It can identify songs and other audio files. [GitHub Repository](https://github.com/karoldvl/audiorecognition)
-- **echoprint**: An open-source music fingerprinting system developed by The Echo Nest. It provides a robust solution for identifying songs. [GitHub Repository](https://github.com/spotify/echoprint-codegen)
-- **AcoustID**: A music fingerprinting service that uses Chromaprint as its fingerprinting algorithm. It is designed to identify songs and link them to metadata. [Official Website](https://acoustid.org/)
 
 These projects offer various approaches and implementations for audio recognition and can serve as valuable resources for understanding and developing similar systems.
 
