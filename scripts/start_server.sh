@@ -20,3 +20,20 @@ start_client() {
 }
 
 start_server
+# This script is designed to perform a specific task.
+# It includes functions for initializing the environment,
+# processing data, and generating output.
+# 
+# The script starts by setting up necessary configurations
+# and dependencies. It then proceeds to execute the main
+# logic, which involves data manipulation and analysis.
+# 
+# The following sections provide detailed comments on
+# the start server part of the code:
+#
+# - Initialize server configurations
+# - Set up server routes and handlers
+# - Start the server and listen for incoming requests
+#
+# Ensure that all required dependencies are installed
+# and configured correctly before running this script.
