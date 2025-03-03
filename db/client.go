@@ -1,5 +1,8 @@
 package db
-
+// Import necessary packages
+// "fmt" for formatted I/O
+// "song-recognition/models" for data models
+// "song-recognition/utils" for utility functions
 import (
 	"fmt"
 	"song-recognition/models"
